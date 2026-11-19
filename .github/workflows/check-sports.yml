@@ -1,0 +1,33 @@
+name: Проверка доступа к sports.ru
+
+on:
+  workflow_dispatch:        # кнопка «Run workflow» во вкладке Actions
+  # schedule:               # раскомментируйте, чтобы проверять каждый час в течение суток
+  #   - cron: "17 * * * *"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Запросить страницы
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
+          TS=$(date +%s)
+          echo "IP раннера: $(curl -s https://api.ipify.org)"
+          for URL in \
+            "https://www.sports.ru/hockey/tournament/nhl/news/?t=$TS" \
+            "https://www.sports.ru/football/tournament/premier-league/news/?t=$TS" \
+            "https://www.sports.ru/rss/topnews.xml?t=$TS"
+          do
+            echo "=================================================="
+            echo "$URL"
+            curl -s -L -A "$UA" -H "Accept-Language: ru-RU,ru;q=0.9" \
+                 -D headers.txt -o page.html \
+                 -w "HTTP %{http_code} | %{size_download} байт | %{time_total} c\n" "$URL" || echo "curl: ошибка соединения"
+            echo "--- заголовки, по которым видна защита/CDN:"
+            grep -iE "^(server|via|cf-ray|x-cache|x-qrator|x-ddos|set-cookie: (__ddg|qrator|cf_))" headers.txt || echo "(нет)"
+            echo "--- признаки капчи/заглушки:"
+            grep -ioE "captcha|qrator|ddos-guard|access denied|доступ запрещ|checking your browser" page.html | sort | uniq -c || echo "(нет)"
+            echo "--- ссылок на новости в HTML:"
+            grep -oE "(hockey|football)/[0-9]{9,}" page.html | sort -u | wc -l
+          done
