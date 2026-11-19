@@ -76,6 +76,14 @@ def clean(s: str) -> str:
     return re.sub(r"«\s+", "«", re.sub(r"\s+»", "»", s))
 
 
+ALLOWED_HOSTS = ("https://www.sports.ru/", "https://video.sports.ru/")
+
+
+def allowed(url: str) -> bool:
+    """Отсекает промо-игры и викторины (sirena.sports.ru и т. п.), оставляя новости и видео."""
+    return url.startswith(ALLOWED_HOSTS)
+
+
 def news_id(url: str) -> str:
     m = re.search(r"/(\d{7,})", url)
     return m.group(1) if m else url
@@ -104,11 +112,17 @@ def parse_jsonld(page: str) -> list[dict]:
                         url = url.split("#")[0]
                         if not url or not art.get("headline") or not art.get("datePublished"):
                             continue
+                        title = clean(art["headline"])
+                        desc = clean(art.get("description", ""))
+                        if desc == title:
+                            desc = ""
+                        if url.startswith("https://video.sports.ru/"):
+                            title = "▶ " + title
                         items.append({
                             "id": news_id(url),
                             "url": url,
-                            "title": clean(art["headline"]),
-                            "description": clean(art.get("description", "")),
+                            "title": title,
+                            "description": desc,
                             "date": parse_date(art["datePublished"]).isoformat(),
                         })
                 else:
@@ -177,7 +191,7 @@ def process(feed: dict, source_dir: Path | None) -> int:
     else:
         page = fetch(feed["url"])
 
-    fresh = parse_jsonld(page) or parse_one_news(page)
+    fresh = [it for it in (parse_jsonld(page) or parse_one_news(page)) if allowed(it["url"])]
     if len(fresh) < MIN_ITEMS:
         raise RuntimeError(
             f"{feed['id']}: найдено только {len(fresh)} новостей "
@@ -191,7 +205,7 @@ def process(feed: dict, source_dir: Path | None) -> int:
     for it in fresh:
         known[it["id"]] = it        # обновляем заголовок, если редакция его поправила
 
-    items = sorted(known.values(), key=lambda x: (x["date"], x["id"]), reverse=True)[:KEEP_IN_STATE]
+    items = sorted((it for it in known.values() if allowed(it["url"])), key=lambda x: (x["date"], x["id"]), reverse=True)[:KEEP_IN_STATE]
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     state_file.write_text(json.dumps(items, ensure_ascii=False, indent=0), encoding="utf-8")
