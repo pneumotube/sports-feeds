@@ -2,7 +2,7 @@ name: RSS-ленты sports.ru
 
 on:
   schedule:
-    - cron: "*/20 * * * *"   # каждые 20 минут (GitHub может запускать с опозданием)
+    - cron: "7,27,47 * * * *"   # каждые 20 минут (GitHub может запускать с опозданием)
   workflow_dispatch:         # кнопка «Run workflow» для ручного запуска
 
 permissions:
