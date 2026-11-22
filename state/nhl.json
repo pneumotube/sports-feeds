@@ -1,5 +1,47 @@
 [
 {
+"id": "1117443361",
+"url": "https://www.sports.ru/hockey/1117443361-nxl-karolina-primet-edmonton-vashington-v-gostyax-u-bostona-monreal-pr.html",
+"title": "НХЛ. «Каролина» победила «Эдмонтон» – 7:4, «Вашингтон» уступил «Бостону» – 5:7, «Сент-Луис» обыграл «Нью-Джерси» – 9:6",
+"description": "",
+"date": "2026-11-22T08:57:00+03:00"
+},
+{
+"id": "1117444619",
+"url": "https://www.sports.ru/hockey/1117444619-vashington-proigral-5-matchej-podryad-v-osnovnoe-vremya-propustiv-30-s.html",
+"title": "«Вашингтон» проиграл 5 матчей подряд в основное время, пропустив 30 шайб на отрезке. Команда Карбери идет 12-й на Востоке",
+"description": "",
+"date": "2026-11-22T08:50:00+03:00"
+},
+{
+"id": "1117444609",
+"url": "https://www.sports.ru/hockey/1117444609-sorokin-otrazil-18-iz-20-broskov-v-matche-s-detrojtom-pobeda-3-ya-podr.html",
+"title": "▶ Сорокин отразил 18 из 20 бросков в матче против «Детройта». Победа – 3-я подряд и 9-я в 15 играх в сезоне (91,8% сэйвов, КН 2,39)",
+"description": "Вратарь «Айлендерс» Илья Сорокин вышел в старте на матч регулярного чемпионата НХЛ против «Детройта» (3:2).",
+"date": "2026-11-22T08:40:00+03:00"
+},
+{
+"id": "1117444607",
+"url": "https://www.sports.ru/hockey/1117444607-pittsburg-proigral-3-matcha-podryad-i-15-iz-22-v-sezone-komanda-myuza-.html",
+"title": "«Питтсбург» проиграл 3 матча подряд и 15 из 22 в сезоне. Команда Мьюза идет на последнем месте на Востоке",
+"description": "",
+"date": "2026-11-22T08:34:00+03:00"
+},
+{
+"id": "1117444603",
+"url": "https://www.sports.ru/hockey/1117444603-murashov-propustil-4-shajby-posle-29-broskov-v-matche-s-neshvillom-por.html",
+"title": "Мурашов пропустил 4 шайбы после 29 бросков в матче против «Нэшвилла». Поражение – 7-е в 9 играх в сезоне (89,1% сэйвов, КН 3,35)",
+"description": "Вратарь «Питтсбурга» Сергей Мурашов вышел в старте на матч регулярного чемпионата НХЛ с «Нэшвиллом» (3:4).",
+"date": "2026-11-22T08:22:00+03:00"
+},
+{
+"id": "1117444596",
+"url": "https://www.sports.ru/hockey/1117444596-toronto-proigral-9-matchej-podryad-iz-nix-8-doma-komanda-xillera-idet-.html",
+"title": "«Торонто» проиграл 9 матчей подряд, из них 8 – дома. Команда Хиллера идет на 14-м месте на Востоке",
+"description": "",
+"date": "2026-11-22T07:58:00+03:00"
+},
+{
 "id": "1117444594",
 "url": "https://www.sports.ru/hockey/1117444594-xusnutdinov-prerval-seriyu-iz-10-igr-bez-ochkov-pas-na-gol-v-pustye-vo.html",
 "title": "Хуснутдинов прервал серию из 10 игр без очков – пас на гол в пустые ворота «Вашингтона». У форварда «Бостона» 3+4 в 23 играх в сезоне",
@@ -47,13 +89,6 @@
 "title": "Овечкин не забил в 16-м матче подряд: ассист, 1 бросок в створ и 1 в штангу, 2 блока, 1 хит и «минус 1» за 14:35 против «Бостона». У него 1+6 в 21 игре в сезоне",
 "description": "Капитан «Вашингтона» Александр Овечкин продлил безголевую серию в матче регулярного чемпионата НХЛ с «Бостоном» (5:7).",
 "date": "2026-11-22T06:15:00+03:00"
-},
-{
-"id": "1117443361",
-"url": "https://www.sports.ru/hockey/1117443361-nxl-karolina-primet-edmonton-vashington-v-gostyax-u-bostona-monreal-pr.html",
-"title": "НХЛ. «Каролина» победила «Эдмонтон» – 7:4, «Вашингтон» уступил «Бостону» – 5:7, «Сент-Луис» обыграл «Нью-Джерси» – 9:6, «Миннесота» в гостях у «Ванкувера»",
-"description": "",
-"date": "2026-11-22T06:05:00+03:00"
 },
 {
 "id": "1117444557",
@@ -322,6 +357,13 @@
 "date": "2026-11-21T01:33:00+03:00"
 },
 {
+"id": "https://www.sports.ru/specials/nhl-season/?utm_source=news",
+"url": "https://www.sports.ru/specials/nhl-season/?utm_source=news",
+"title": "Драйзайтль и другие звезды НХЛ – знаете, откуда они родом?",
+"description": "",
+"date": "2026-11-21T01:30:00+03:00"
+},
+{
 "id": "1117443085",
 "url": "https://www.sports.ru/hockey/1117443085-malkin-propustit-minimum-2-matcha-iz-za-travmy.html",
 "title": "Малкин из-за травмы пропустит выездную серию «Питтсбурга» к «Нэшвиллу» и «Далласу»",
@@ -443,7 +485,7 @@
 {
 "id": "1117442282",
 "url": "https://www.sports.ru/hockey/1117442282-vashington-proigral-4-matcha-podryad-s-obshhej-razniczej-1120-komanda-.html",
-"title": "«Вашингтон» проиграл 4 матча подряд с общей разницей 11:20. Команда Карбери идет на 12-м месте на Востоке",
+"title": "«Вашингтон» проиграл 4 матча подряд с общей разницей 11:23. Команда Карбери идет на 12-м месте на Востоке",
 "description": "",
 "date": "2026-11-20T09:50:00+03:00"
 },
@@ -670,13 +712,6 @@
 "title": "«Бостон» прервал серию из 3 поражений, «Детройт» проиграл 6 из 7 последних матчей",
 "description": "",
 "date": "2026-11-19T06:33:00+03:00"
-},
-{
-"id": "https://www.sports.ru/specials/nhl-season/?utm_source=news",
-"url": "https://www.sports.ru/specials/nhl-season/?utm_source=news",
-"title": "Пастрняк и другие звезды НХЛ – знаете, откуда они родом?",
-"description": "",
-"date": "2026-11-19T01:00:00+03:00"
 },
 {
 "id": "1117440873",
